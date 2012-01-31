@@ -4,7 +4,7 @@ namespace Phark\DependencyBuilderTest;
 
 require_once __DIR__.'/base.php';
 
-\Mock::generate('\Phark\Source','MockSource'); 
+\Mock::generate('\Phark\Source','MockSource');
 
 class DependencyBuilderTest extends \Phark\Tests\TestCase
 {

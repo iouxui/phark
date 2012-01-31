@@ -14,10 +14,10 @@ class PhpIni
 
 	public static function fromCurrent()
 	{
-		ob_start(); 
-		@phpinfo(); 
-		$phpinfo = preg_replace ('/<[^>]*>/', '', ob_get_contents()); 
-		ob_end_clean(); 
+		ob_start();
+		@phpinfo();
+		$phpinfo = preg_replace ('/<[^>]*>/', '', ob_get_contents());
+		ob_end_clean();
 
 		if(!preg_match('#Loaded Configuration File => (\S+)#', $phpinfo, $m))
 			throw new Exception("Unable to find configuration file in phpinfo()");
@@ -29,7 +29,7 @@ class PhpIni
 	{
 		$contents = file($this->_path);
 		$pattern = '/'.preg_quote($key,'/').'/i';
-		$lines = preg_grep($pattern, $contents);	
+		$lines = preg_grep($pattern, $contents);
 
 		if(count($lines))
 		{
@@ -54,5 +54,5 @@ class PhpIni
 	public function __get($value)
 	{
 		return $this->_values[$value];
-	}	
+	}
 }

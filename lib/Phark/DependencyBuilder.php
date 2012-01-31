@@ -19,7 +19,7 @@ class DependencyBuilder
 
 	public function dependency($name)
 	{
-		$this->_dependencies []= func_get_args(); 
+		$this->_dependencies []= func_get_args();
 		return $this;
 	}
 
@@ -31,7 +31,7 @@ class DependencyBuilder
 		{
 			$name = array_shift($d);
 			$deps []= new Dependency($name, $d, $this->_sources);
-		}		
+		}
 
 		return $deps;
 	}

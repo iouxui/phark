@@ -14,7 +14,7 @@ class ResolverTest extends \Phark\Tests\TestCase
 	private function _package($name, $version, $deps=array())
 	{
 		$deps = array_map(function($dep) { return \Phark\Dependency::parse($dep); }, $deps);
-		
+
 		return new \Phark\Package($name, new \Phark\Version($version), $deps, $this->source);
 	}
 
@@ -22,7 +22,7 @@ class ResolverTest extends \Phark\Tests\TestCase
 	{
 		$package = $this->_package('package','1.0.0', array(
 			'packageA 1.0.0',
-			'packageB >=2.0.1',	
+			'packageB >=2.0.1',
 		));
 
 		$this->source
@@ -43,7 +43,7 @@ class ResolverTest extends \Phark\Tests\TestCase
 			\Phark\Dependency::parse('packageC =3.5.0beta1'),
 			\Phark\Dependency::parse('packageB =2.0.1'),
 			\Phark\Dependency::parse('packageA =1.0.0'),
-			\Phark\Dependency::parse('package =1.0.0'),	
+			\Phark\Dependency::parse('package =1.0.0'),
 		));
 	}
 
@@ -66,7 +66,7 @@ class ResolverTest extends \Phark\Tests\TestCase
 			\Phark\Dependency::parse('packageB =1.0.0'),
 			\Phark\Dependency::parse('packageA =1.0.0'),
 		));
-	}	
+	}
 
 	public function testDependencyClash()
 	{
@@ -84,8 +84,8 @@ class ResolverTest extends \Phark\Tests\TestCase
 
 		$resolver = new \Phark\DependencyResolver($this->index);
 		$resolver->package($package);
-		
+
 		$this->expectException();
 		$solution = $resolver->resolve($package);
-	}	
+	}
 }

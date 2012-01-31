@@ -40,14 +40,14 @@ class DependenciesCommand implements \Phark\Command
 				$env->shell()->printf("√\n");
 				continue;
 			}
-			catch(Exception $e) 
+			catch(Exception $e)
 			{
 				$env->shell()->printf("required\n");
 			}
 
 			$package = $index->find($dependency);
 			$installer = new \Phark\PackageInstaller($env);
-			$installer->install($package, Path::join($project->vendorDir(), $package->name()));			
+			$installer->install($package, Path::join($project->vendorDir(), $package->name()));
 
 			$env->shell()->printf("       installed √\n", $package->hash());
 		}

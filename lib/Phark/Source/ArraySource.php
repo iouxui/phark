@@ -18,7 +18,7 @@ class ArraySource implements \Phark\Source
 	public function packages()
 	{
 		return $this->_packages;
-	}	
+	}
 
 	public function add(\Phark\Package $package)
 	{

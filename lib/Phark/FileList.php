@@ -45,7 +45,7 @@ class FileList implements \IteratorAggregate
 
 	/**
 	 * Returns the base directory, defaults to cwd
-	 */ 
+	 */
 	public function directory()
 	{
 		return $this->_path ?: $this->_shell->getcwd();
@@ -85,7 +85,7 @@ class FileList implements \IteratorAggregate
 	{
 		$this->_exclude []= $pattern;
 		return $this;
-	}	
+	}
 
 	/**
 	 * Match a glob to a filename, $glob can be an array of globs
@@ -100,7 +100,7 @@ class FileList implements \IteratorAggregate
 			$pattern = preg_replace('/\*\*/','(.+?)',$g);
 			$pattern = preg_replace('/\*/','([^/]+)',$pattern);
 			$patterns []= $pattern;
-		}	
+		}
 
 		return preg_match('#^('.implode('|',$patterns).')$#', $filename);
 	}

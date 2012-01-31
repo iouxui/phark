@@ -2,13 +2,13 @@
 
 require_once __DIR__.'/base.php';
 
-\Mock::generate('\Phark\Shell','MockShell'); 
+\Mock::generate('\Phark\Shell','MockShell');
 
 class SpecificationBuilderTest extends \Phark\Tests\TestCase
 {
 	public function testBuilding()
 	{
-		$shell = new MockShell();	
+		$shell = new MockShell();
 		$shell->setReturnValue('getcwd', '/blargh');
 		$shell->setReturnValue('glob', array(
 			'Pharkspec',
@@ -46,7 +46,7 @@ class SpecificationBuilderTest extends \Phark\Tests\TestCase
 			'lib/Test/A.php',
 			'lib/Test/B.php',
 			'lib/Test/Package/C.php',
-		));			
+		));
 	}
 }
 

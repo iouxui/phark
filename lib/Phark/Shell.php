@@ -28,8 +28,8 @@ class Shell
 		foreach ($iterator as $file)
 		{
 			$path = new Path(substr($file->getPath(), strlen($basedir)+1), $file->getFilename());
-			
-			if(FileList::match($path, $pattern)) 
+
+			if(FileList::match($path, $pattern))
 				$files []= (string) $path;
 		}
 
@@ -45,11 +45,11 @@ class Shell
 		$dirs = array();
 
 		foreach (new \DirectoryIterator($basedir) as $fileInfo) {
-			if(!$fileInfo->isDot() && $fileInfo->isDir()) 
+			if(!$fileInfo->isDot() && $fileInfo->isDir())
 				$dirs []= (string) $fileInfo;
 		}
 
-		return $dirs; 
+		return $dirs;
 	}
 
 	/**
@@ -77,7 +77,7 @@ class Shell
 	}
 
 	/**
-	 * Returns true if the dir is a dir 
+	 * Returns true if the dir is a dir
 	 * @see is_dir
 	 */
 	public function isdir($dir)
@@ -90,13 +90,13 @@ class Shell
 	 */
 	public function copy($source, $dest)
 	{
-		if(!is_dir(dirname($dest))) 
+		if(!is_dir(dirname($dest)))
 			$this->mkdir(dirname($dest));
-		
+
 		if(!@copy($source, $dest))
 			throw new ShellException("Unable to copy $source to $dest: ".$this->_lastError());
 
-		return $this;	
+		return $this;
 	}
 
 	/**
@@ -145,7 +145,7 @@ class Shell
 			throw new ShellException("Unable to rmdir $dir: ".$this->_lastError());
 
 		return $this;
-	}		
+	}
 
 	/**
 	 * Outputs a line to STDOUT

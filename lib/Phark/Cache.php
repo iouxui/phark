@@ -28,7 +28,7 @@ class Cache
 		{
 			if(!is_writable(dirname($filename->archive)))
 				throw new Exception("Unable to fetch to ".dirname($filename->archive).", no write permissions");
-			
+
 
 			if(!$fp = fopen($filename->archive, 'w+'))
 				throw new Exception("Failed to open {$filename->archive} for writing");
@@ -66,5 +66,5 @@ class Cache
 			'type' => $pathinfo['extension'],
 		);
 	}
-	
+
 }

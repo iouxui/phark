@@ -12,7 +12,7 @@ class Dependency
 	public function __construct($package, $requirement=null)
 	{
 		$this->package = $package;
-		$this->requirement = Requirement::parse($requirement); 
+		$this->requirement = Requirement::parse($requirement);
 	}
 
 	public function isSatisfiedBy($package, $version)
@@ -26,11 +26,11 @@ class Dependency
 	public function __toString()
 	{
 		return sprintf('%s %s', $this->package, $this->requirement);
-	}	
+	}
 
 	public static function parse($string)
 	{
 		list($package, $requirement) = explode(' ', $string, 2);
-		return new self($package, $requirement);	
+		return new self($package, $requirement);
 	}
 }

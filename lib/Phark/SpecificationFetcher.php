@@ -23,7 +23,7 @@ class SpecificationFetcher
 
 		// TODO: this should be done with streams, too much memory used here
 		file_put_contents($cacheFile, $contents);
-	
+
 		return Specification::load($cacheFile);
 	}
 }

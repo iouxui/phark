@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/base.php';
 
-\Mock::generate('\Phark\Shell','MockShell'); 
+\Mock::generate('\Phark\Shell','MockShell');
 
 class FileListTest extends \Phark\Tests\TestCase
 {

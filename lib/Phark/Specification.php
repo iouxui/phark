@@ -3,7 +3,7 @@
 namespace Phark;
 
 /**
- * Describes the contents of a Phark package. Call magic is used to access any 
+ * Describes the contents of a Phark package. Call magic is used to access any
  * of the public properties as method calls.
  */
 class Specification

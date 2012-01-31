@@ -27,7 +27,7 @@ class SourceIndex
 		{
 			if(!$requirement || $requirement->isSatisfiedBy($package->version()))
 				return $package;
-		}	
+		}
 
 		throw new \Phark\Exception("No versions of $name meet {$dependency->requirement}");
 	}
@@ -43,7 +43,7 @@ class SourceIndex
 		// sort packages
 		foreach(array_keys($packages) as $name)
 			$packages[$name] = \Phark\Package::sort($packages[$name]);
-		
+
 		return $packages;
 	}
 }

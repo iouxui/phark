@@ -4,10 +4,10 @@ docs = $(shell find doc -name '*.md' \
 				|sed 's|.md|.1|g' \
 				|sed 's|doc/|man/|g' )
 
-install: 
-	bin/phark-install	
+install:
+	bin/phark-install
 
-man1: 
+man1:
 	[ -d man ] || mkdir -p man
 
 doc: man1 $(docs)
