@@ -22,5 +22,5 @@ class OptionsTest extends \Phark\Tests\TestCase
 
 		$result = $opts->parse(array('-b'));
 		$this->assertEqual($result->unmatched, array('install','--test'));
-	}	
+	}
 }

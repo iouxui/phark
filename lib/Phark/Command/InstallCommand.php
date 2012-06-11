@@ -37,7 +37,7 @@ class InstallCommand implements \Phark\Command
 		else
 		{
 			$env->shell()->printf(" * installing %s\n", $result->params['package']);
-			$package = $index->find(new \Phark\Dependency($result->params['package']));		
+			$package = $index->find(new \Phark\Dependency($result->params['package']));
 		}
 
 		$resolver = new \Phark\DependencyResolver($index, $package->dependencies());
@@ -53,6 +53,6 @@ class InstallCommand implements \Phark\Command
 		$env->shell()->printf(" * activating...\n");
 		$package->install()->activate();
 
-		$env->shell()->printf(" * package %s installed √\n", $package->hash());		
+		$env->shell()->printf(" * package %s installed √\n", $package->hash());
 	}
 }

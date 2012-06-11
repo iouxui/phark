@@ -3,8 +3,8 @@
 namespace Phark;
 
 /**
- * Encapsulates a requirement for a particular version e.g >=mypackage-1.0.0 
- */ 
+ * Encapsulates a requirement for a particular version e.g >=mypackage-1.0.0
+ */
 class Requirement
 {
 	private $_requirements=array();
@@ -25,7 +25,7 @@ class Requirement
 
 		$r = new \stdClass();
 		$r->operator = $m[1] ?: '=';
-		$r->version = new Version($m[2]); 
+		$r->version = new Version($m[2]);
 
 		return $r;
 	}
@@ -51,11 +51,11 @@ class Requirement
 			}
 		}
 
-		return true;		
+		return true;
 	}
 
 	/**
-	 * Takes either a string or a Requirement object, returns a Requirement 
+	 * Takes either a string or a Requirement object, returns a Requirement
 	 * object
 	 */
 	public static function parse($requirement)

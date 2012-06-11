@@ -73,9 +73,9 @@ class PackageInstaller
 	}
 
 	/**
-	 * Links a package directory to another location, optionally installs 
-	 * executables into execdir 
-	 */ 
+	 * Links a package directory to another location, optionally installs
+	 * executables into execdir
+	 */
 	public function activate($package, $dir, $executables=true)
 	{
 		// remove any previously active versions
@@ -89,7 +89,7 @@ class PackageInstaller
 			foreach($package->spec()->executables() as $bin)
 			{
 				if(!$this->_shell->isfile(Path::join($dir, $bin)))
-					throw new Exception("Couldn't find executable $bin"); 
+					throw new Exception("Couldn't find executable $bin");
 
 				$this->_shell
 					->chmod((string) new Path($dir, $bin), 0777)
@@ -105,7 +105,7 @@ class PackageInstaller
 
 	/**
 	 * Removes a symlink, as well as any executables linked to the dir
-	 */ 
+	 */
 	public function deactivate($dir)
 	{
 		$spec = Specification::load($dir);
@@ -115,13 +115,13 @@ class PackageInstaller
 		{
 			$path = new Path($this->_env->{'executable_dir'}, basename($bin));
 
-			if($this->_shell->isfile($path)) $this->_shell->unlink($path); 
+			if($this->_shell->isfile($path)) $this->_shell->unlink($path);
 		}
 
 		// remove the active link
 		$this->_shell->unlink($dir);
 
 		return $this;
-		
+
 	}
 }

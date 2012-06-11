@@ -18,10 +18,10 @@ class HttpSource implements \Phark\Source
 	}
 
 	public function package($name, \Phark\Version $version)
-	{	
+	{
 		$index = $this->index();
 		$deps = array_map(function($d){ return Dependency::parse($d); },
-			$index[$name][(string)$version]); 
+			$index[$name][(string)$version]);
 
 		return new Package($name, $version, $deps, $this, $this->_env);
 	}
@@ -42,9 +42,9 @@ class HttpSource implements \Phark\Source
 
 		return $this->_env->cache()->fetch($url, function($url) {
 			return fopen($url, 'rb');
-		});	
+		});
 	}
-	
+
 	protected function index()
 	{
 		if(!isset($this->_index))

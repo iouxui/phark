@@ -9,7 +9,7 @@ require_once __DIR__.'/../lib/Phark/ClassLoader.php';
 $classloader = new \Phark\ClassLoader(array(__DIR__.'/../lib'));
 $classloader->register();
 
-// create directories 
+// create directories
 $env = new \Phark\Environment();
 $env->shell()
 	->mkdir($env->{'package_dir'}, 0777)

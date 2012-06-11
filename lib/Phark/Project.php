@@ -66,7 +66,7 @@ class Project
 				return new self($dir);
 			else
 				$dir = dirname($dir);
-		} 
+		}
 		while($dir != '/');
 	}
 }

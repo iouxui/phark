@@ -2,10 +2,10 @@
 
 require_once __DIR__.'/base.php';
 
-\Mock::generate('\Phark\Shell','MockShell'); 
-\Mock::generate('\Phark\Environment','MockEnvironment'); 
-\Mock::generate('\Phark\Package','MockPackage'); 
-\Mock::generate('\Phark\Project','MockProject'); 
+\Mock::generate('\Phark\Shell','MockShell');
+\Mock::generate('\Phark\Environment','MockEnvironment');
+\Mock::generate('\Phark\Package','MockPackage');
+\Mock::generate('\Phark\Project','MockProject');
 
 class ListCommandTest extends \Phark\Tests\TestCase
 {
@@ -28,7 +28,7 @@ class ListCommandTest extends \Phark\Tests\TestCase
 	{
 		$this->package->expectOnce('name');
 		$this->package->expectOnce('version');
-			
+
 		$this->env->setReturnValue('packages', array($this->package));
 		$this->env->expectOnce('packages');
 

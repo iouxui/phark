@@ -14,7 +14,7 @@ class ListCommand implements \Phark\Command
 		$opts = new \Phark\Options($args);
 		$result = $opts->parse(array('-g'), array('command'));
 		$shell = $env->shell();
-		
+
 		if(($project = $env->project()) && !isset($result->opts['-g']))
 		{
 			$shell->printf("PROJECT PACKAGES\n\n");
@@ -28,7 +28,7 @@ class ListCommand implements \Phark\Command
 
 		foreach($packages as $package)
 		{
-			$shell->printf("%s (%s)\n", $package->name(), $package->version()); 
+			$shell->printf("%s (%s)\n", $package->name(), $package->version());
 		}
 	}
 }

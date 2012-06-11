@@ -41,7 +41,7 @@ class Environment
 	public function package($name, $version=null)
 	{
 		$index = new Source\SourceIndex(array($this->packages()));
-		return $index->find(new Dependency($name, $version ? Version::parse($version) : null));					
+		return $index->find(new Dependency($name, $version ? Version::parse($version) : null));
 	}
 
 	public function cache()

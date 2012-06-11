@@ -3,7 +3,7 @@
 namespace Phark;
 
 /**
- * A package is all of the code to be included and executed, including 
+ * A package is all of the code to be included and executed, including
  * a specification
  */
 class Package
@@ -84,7 +84,7 @@ class Package
 	}
 
 	/**
-	 * Gets a directory for the package, triggers a fetch 
+	 * Gets a directory for the package, triggers a fetch
 	 * @return string
 	 */
 	public function directory()
@@ -111,7 +111,7 @@ class Package
 	{
 		$path = new \Phark\Path($this->_env->{'package_dir'}, $this->hash());
 		$installer = new \Phark\PackageInstaller($this->_env);
-		$installer->install($this, $path);		
+		$installer->install($this, $path);
 		$this->chdir((string) $path);
 		return $this;
 	}
@@ -122,7 +122,7 @@ class Package
 	public function activate()
 	{
 		$installer = new \Phark\PackageInstaller($this->_env);
-		$installer->activate($this, new \Phark\Path($this->_env->{'active_dir'}, $this->name()));		
+		$installer->activate($this, new \Phark\Path($this->_env->{'active_dir'}, $this->name()));
 		return $this;
 	}
 
@@ -136,7 +136,7 @@ class Package
 			return $a->version()->compare($b->version()) * -1;
 		});
 
-		return $packages;				
+		return $packages;
 	}
 
 	public static function fromSpecification(Specification $spec, Source $source, Environment $env=null)

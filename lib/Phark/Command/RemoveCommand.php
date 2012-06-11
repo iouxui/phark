@@ -24,7 +24,7 @@ class RemoveCommand implements \Phark\Command
 		$installer = new \Phark\PackageInstaller($env);
 		$installer->uninstall($package, Path::join($env->{'active_dir'}, $package->name()));
 
-		$env->shell()->printf("  removed √\n");		
+		$env->shell()->printf("  removed √\n");
 	}
 }
 

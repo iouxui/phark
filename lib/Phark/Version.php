@@ -30,7 +30,7 @@ class Version
 	}
 
 	/**
-	 * Returns 1 if this version is greater, 0 if the same, -1 if less 
+	 * Returns 1 if this version is greater, 0 if the same, -1 if less
 	 * than
 	 */
 	public function compare($v)
@@ -43,7 +43,7 @@ class Version
 
 		if($cmp == 0)
 		{
-			if(empty($this->special) && !empty($v->special)) 
+			if(empty($this->special) && !empty($v->special))
 				$cmp = 1;
 			else if(!empty($this->special) && empty($v->special))
 				$cmp = -1;
@@ -86,6 +86,6 @@ class Version
 			return $a->compare($b) * -1;
 		});
 
-		return $versions;		
+		return $versions;
 	}
 }

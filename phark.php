@@ -2,7 +2,7 @@
 
 /**
  * This stub is loaded on every php invocation. It builds an include_path
- * based on the nearest Pharkdeps or Pharkspec file, otherwise it uses the  
+ * based on the nearest Pharkdeps or Pharkspec file, otherwise it uses the
  * system-wide activated packages path.
  **/
 

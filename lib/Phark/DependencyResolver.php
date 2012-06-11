@@ -3,7 +3,7 @@
 namespace Phark;
 
 /**
- * Resolves dependencies using a simple graph. There are some gaping holes in 
+ * Resolves dependencies using a simple graph. There are some gaping holes in
  * this implementation, eventually a more serious resolver will be required.
  *
  * @see http://www.electricmonk.nl/log/2008/08/07/dependency-resolving-algorithm/
@@ -37,7 +37,7 @@ class DependencyResolver
 	}
 
 	/**
-	 * Adds a dependency to be installed 
+	 * Adds a dependency to be installed
 	 * @chainable
 	 */
 	public function dependency(Dependency $dependency)
@@ -55,7 +55,7 @@ class DependencyResolver
 		$hash = $package->hash();
 
 		if(!isset($this->_tree[$hash]))
-		{	
+		{
 			$this->_tree[$hash] = array();
 
 			foreach($package->dependencies() as $dep)
@@ -94,7 +94,7 @@ class DependencyResolver
 				if(!$requirement->isSatisfiedBy($version))
 					continue;
 			}
-			
+
 			if(!isset($install[$package]) || $install[$package]->less($version))
 				$install[$package] = $version;
 		}
@@ -102,7 +102,7 @@ class DependencyResolver
 		// check all requirements have been installed
 		foreach($this->_requirements as $name=>$requirements)
 			if(!isset($install[$name]))
-				throw new Exception("Failed to find package to satisfy $name");	
+				throw new Exception("Failed to find package to satisfy $name");
 
 		// return dependency objects
 		$dependencies = array();
@@ -125,5 +125,5 @@ class DependencyResolver
 
 		foreach($this->_tree[$node] as $subnode)
 			$this->_walk($subnode, $traversed);
-	}	
+	}
 }

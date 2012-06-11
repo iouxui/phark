@@ -19,7 +19,7 @@ class VersionsTest extends \Phark\Tests\TestCase
 		$this->assertEqual($v->minor, 0);
 		$this->assertEqual($v->patch, 2);
 		$this->assertEqual($v->special, 'beta1');
-		$this->assertEqual((string)$v, "1.0.2beta1"); 
+		$this->assertEqual((string)$v, "1.0.2beta1");
 	}
 
 	public function testComparingVersions()
@@ -41,7 +41,7 @@ class VersionsTest extends \Phark\Tests\TestCase
 		$this->assertTrue($v2->less($v1));
 		$this->assertTrue($v3->less($v1));
 		$this->assertTrue($v4->less($v1));
-	}	
+	}
 
 	public function testSortingVersions()
 	{
@@ -51,6 +51,6 @@ class VersionsTest extends \Phark\Tests\TestCase
 		$this->assertEqual($sorted, array(
 			'1.3.1','1.3.1rc1','1.3.1beta1','1.3.1alpha','0.1.0'
 		));
-	}	
+	}
 }
 

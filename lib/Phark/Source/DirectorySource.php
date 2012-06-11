@@ -36,7 +36,7 @@ class DirectorySource implements \Phark\Source
 		}
 
 		return $packages;
-	}	
+	}
 
 	public function fetch($name, \Phark\Version $version)
 	{
