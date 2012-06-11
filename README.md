@@ -4,7 +4,9 @@ Phark
 Phark is a package management system for PHP code. It provides dependencies, 
 versioning and installation for packages either system-wide or for an individual project. 
 
-**Note: Phark is still in active development, don't install it yet! Read the [STATUS document](https://github.com/lox/phark/blob/master/STATUS.md) for more details**
+**Note: Phark is no longer under active development, I'd recommend [Composer](http://getcomposer.org/)**
+
+**Read the [STATUS document](https://github.com/lox/phark/blob/master/STATUS.md) for more details**
 
 Installing Phark
 ----------------
