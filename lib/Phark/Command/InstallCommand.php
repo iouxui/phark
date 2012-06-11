@@ -14,13 +14,11 @@ class InstallCommand implements \Phark\Command
 		$opts = new \Phark\Options($args);
 		$result = $opts->parse(array('-f','-s:'), array('command','package'));
 		$spec = null;
-
+        $index = new \Phark\Source\SourceIndex($env->sources());
 		// if a directory is specified
 		if($realpath = $env->shell()->realpath($result->params['package']))
 		{
 			$env->shell()->printf(" * installing from %s\n", $realpath);
-
-			$index = new \Phark\Source\SourceIndex($env->sources());
 
 			if(isset($result->opts['-s']))
 			{
